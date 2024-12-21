@@ -1,4 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
+    $('.flip-card').on('click touchend', function (event) {
+        event.preventDefault(); // Prevent any default behavior
+        $(this).find('.flip-card-inner').toggleClass('flipped');
+    });
+
     $('.toggle-details').on('click', function() {
         $(this).siblings('.project-details').slideToggle();
         $(this).text($(this).text() === 'View Details' ? 'Hide Details' : 'View Details');
@@ -19,12 +24,3 @@ $(document).ready(function() {
     });
 });
 
-
-
-
-$(document).ready(function () {
-    $('.flip-card').on('click touchend', function (event) {
-        event.preventDefault(); // Prevent any default behavior
-        $(this).find('.flip-card-inner').toggleClass('flipped');
-    });
-});
